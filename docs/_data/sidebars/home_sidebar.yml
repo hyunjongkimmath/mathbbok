@@ -10,8 +10,20 @@ entries:
       title: Overview
       url: /
     - output: web,pdf
-      title: module name here
-      url: core.html
+      title: Calculus 00_Introduction
+      url: calculus.00_introduction.html
+    - output: web,pdf
+      title: definition.limit
+      url: definition.limit.html
+    - output: web,pdf
+      title: definition.real_valued_function
+      url: definition.real_valued_function.html
+    - output: web,pdf
+      title: utility.markdown
+      url: utility.markdown.html
+    - output: web,pdf
+      title: utility.string
+      url: utility.string.html
     output: web
     title: mathbook
   output: web

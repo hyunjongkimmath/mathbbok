@@ -1,6 +1,10 @@
 {
   "mathbook": {
     "Overview": "/",
-    "module name here": "core.html"
+    "Calculus 00_Introduction": "calculus.00_introduction.html",
+    "definition.limit": "definition.limit.html",
+    "definition.real_valued_function": "definition.real_valued_function.html",
+    "utility.markdown": "utility.markdown.html",
+    "utility.string": "utility.string.html"
   }
 }

@@ -2,9 +2,13 @@
 
 __all__ = ["index", "modules", "custom_doc_links", "git_url"]
 
-index = {}
+index = {"embed_markdown_file": "utility.markdown.ipynb",
+         "find_links_in_markdown_text": "utility.markdown.ipynb",
+         "replace_string_by_indices": "utility.string.ipynb"}
 
-modules = []
+modules = ["None.py",
+           "utility/markdown.py",
+           "utility/string.py"]
 
 doc_url = "https://Hyun Jong Kim.github.io/mathbook/"
 
