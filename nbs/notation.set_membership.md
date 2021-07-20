@@ -1,0 +1,1 @@
+- $\in$ denotes [set membership](definition.set#Set) - we write $x \in X$ if $x$ is an element of the set $X$.
