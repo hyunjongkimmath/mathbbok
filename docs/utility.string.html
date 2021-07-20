@@ -78,6 +78,7 @@ is to be replaced.</li>
 </ul>
 </li>
 </ul>
+<p><strong>examples</strong></p>
 
 </div>
 </div>
@@ -99,6 +100,8 @@ is to be replaced.</li>
 <span class="c1"># With a single range / str&#39;s to replace with</span>
 <span class="k">assert</span> <span class="s1">&#39;ash ketchum&#39;</span> <span class="o">==</span> <span class="n">replace_string_by_indices</span><span class="p">(</span><span class="s1">&#39;ash ketchup&#39;</span><span class="p">,</span> <span class="n">replace_ranges</span><span class="o">=</span><span class="p">[</span><span class="mi">4</span><span class="p">],</span> <span class="n">replace_with</span><span class="o">=</span><span class="s2">&quot;ketchum&quot;</span><span class="p">)</span>
 <span class="k">assert</span> <span class="s1">&#39;a typo&#39;</span> <span class="o">==</span> <span class="n">replace_string_by_indices</span><span class="p">(</span><span class="s1">&#39;a tupo&#39;</span><span class="p">,</span> <span class="n">replace_ranges</span><span class="o">=</span><span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">],</span> <span class="n">replace_with</span> <span class="o">=</span> <span class="s1">&#39;y&#39;</span><span class="p">)</span>
+
+<span class="k">assert</span> <span class="s1">&#39;no problem&#39;</span> <span class="o">==</span> <span class="n">replace_string_by_indices</span><span class="p">(</span><span class="s1">&#39;no problem&#39;</span><span class="p">,</span> <span class="p">[],</span> <span class="p">[])</span>
 </pre></div>
 
     </div>

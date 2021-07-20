@@ -8,7 +8,9 @@ def replace_string_by_indices(string, replace_ranges, replace_with):
     if isinstance(replace_with, str):
         replace_ranges = [replace_ranges]
         replace_with = [replace_with]
-    assert len(replace_ranges) == len(replace_with) and len(replace_ranges) != 0
+    assert len(replace_ranges) == len(replace_with)
+    if len(replace_ranges) == 0:
+        return string
     str_parts = []
     for i in range(len(replace_ranges)):
         replace_string = replace_with[i]

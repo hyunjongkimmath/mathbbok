@@ -19,6 +19,12 @@ entries:
       title: definition.real_valued_function
       url: definition.real_valued_function.html
     - output: web,pdf
+      title: notation.calculus
+      url: notation.calculus.html
+    - output: web,pdf
+      title: playground
+      url: playground.html
+    - output: web,pdf
       title: utility.markdown
       url: utility.markdown.html
     - output: web,pdf
