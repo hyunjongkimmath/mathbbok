@@ -3,7 +3,4 @@
 __all__ = []
 
 # Cell
-from ..utility.markdown import *
-
-# Cell
-embed_markdown_file('real_valued_function.md')
+if __name__ == '__main__': embed_markdown_file('real_valued_function.md')

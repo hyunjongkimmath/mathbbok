@@ -3,7 +3,4 @@
 __all__ = []
 
 # Cell
-from ..utility.markdown import *
-
-# Cell
-embed_markdown_file('limit_of_a_function_at_a_finite_input.md')
+if __name__ == '__main__': embed_markdown_file('limit_of_a_function_at_a_finite_input.md')

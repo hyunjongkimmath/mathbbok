@@ -6,7 +6,8 @@ index = {"embed_markdown_file": "utility.markdown.ipynb",
          "find_links_in_markdown_text": "utility.markdown.ipynb",
          "replace_string_by_indices": "utility.string.ipynb"}
 
-modules = ["None.py",
+modules = ["definition/limit.py",
+           "definition/real_valued_function.py",
            "utility/markdown.py",
            "utility/string.py"]
 
