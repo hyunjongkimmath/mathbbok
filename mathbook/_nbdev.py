@@ -2,7 +2,8 @@
 
 __all__ = ["index", "modules", "custom_doc_links", "git_url"]
 
-index = {"find_links_in_markdown_text": "utility.markdown.ipynb",
+index = {"LOCATION": "configs.ipynb",
+         "find_links_in_markdown_text": "utility.markdown.ipynb",
          "link_with_anchor": "utility.markdown.ipynb",
          "get_formatted_markdown_link": "utility.markdown.ipynb",
          "WEBSITE_URL": "utility.markdown.ipynb",
@@ -12,7 +13,8 @@ index = {"find_links_in_markdown_text": "utility.markdown.ipynb",
          "embed_markdown_file": "utility.markdown.ipynb",
          "replace_string_by_indices": "utility.string.ipynb"}
 
-modules = ["definition/limit.py",
+modules = ["configs.py",
+           "definition/limit.py",
            "definition/real_valued_function.py",
            "definition/set.py",
            "notation/basic.py",

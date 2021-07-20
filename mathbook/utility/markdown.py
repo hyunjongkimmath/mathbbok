@@ -82,6 +82,8 @@ def replace_all_footnotes_with_formatted_footnotes(text, location='website'):
 def embed_markdown_file(file_path, display_file_link=False, location='website'):
     """Embed markdown file content into ipynb.
     """
+    if not os.path.exists(file_path):
+        return
     with open(file_path, 'r') as markdown_file:
         text = markdown_file.read()
         text = replace_all_links_with_formatted_links(text, location=location)

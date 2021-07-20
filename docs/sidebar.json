@@ -2,6 +2,7 @@
   "mathbook": {
     "Overview": "/",
     "Calculus 00_Introduction": "calculus.00_introduction.html",
+    "Title": "configs.html",
     "definition.limit": "definition.limit.html",
     "definition.real_valued_function": "definition.real_valued_function.html",
     "definition.set": "definition.set.html",
