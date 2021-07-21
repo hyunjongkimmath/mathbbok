@@ -1,0 +1,1 @@
+- $\mathbb{R}$ denotes the set of [real numbers](definition.real_numbers)

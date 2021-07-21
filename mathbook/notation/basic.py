@@ -4,5 +4,20 @@ __all__ = []
 
 # Cell
 if __name__ == '__main__':
+    embed_markdown_file('notation.real_numbers.md',
+                        destination=DESTINATION, origin=ORIGIN)
+
+# Cell
+if __name__ == '__main__':
     embed_markdown_file('notation.set_membership.md',
+                        destination=DESTINATION, origin=ORIGIN)
+
+# Cell
+if __name__ == '__main__':
+    embed_markdown_file('notation.set_difference.md',
+                        destination=DESTINATION, origin=ORIGIN)
+
+# Cell
+if __name__ == '__main__':
+    embed_markdown_file('notation.singleton_set.md',
                         destination=DESTINATION, origin=ORIGIN)

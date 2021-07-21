@@ -10,20 +10,41 @@ entries:
       title: Overview
       url: /
     - output: web,pdf
+      title: Title
+      url: Untitled.html
+    - output: web,pdf
       title: Calculus 00_Introduction
       url: calculus.00_introduction.html
     - output: web,pdf
       title: Configs
       url: configs.html
     - output: web,pdf
+      title: definition.function
+      url: definition.function.html
+    - output: web,pdf
+      title: definition.function_continuous_at_a_point
+      url: definition.function_continuous_at_a_point.html
+    - output: web,pdf
+      title: definition.function_defined_near_a_point
+      url: definition.function_defined_near_a_point.html
+    - output: web,pdf
+      title: definition.interval
+      url: definition.interval.html
+    - output: web,pdf
       title: definition.limit
-      url: definition.limit.html
+      url: definition.limit_of_a_function.html
+    - output: web,pdf
+      title: definition.real_numbers
+      url: definition.real_numbers.html
     - output: web,pdf
       title: definition.real_valued_function
       url: definition.real_valued_function.html
     - output: web,pdf
       title: definition.set
       url: definition.set.html
+    - output: web,pdf
+      title: definition.subset
+      url: definition.subset.html
     - output: web,pdf
       title: notation.basic
       url: notation.basic.html

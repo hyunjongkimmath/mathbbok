@@ -1,0 +1,1 @@
+- $\{a\}$ denotes the set with the unique [element](definition.set) $a$.

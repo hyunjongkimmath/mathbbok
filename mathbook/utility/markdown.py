@@ -19,7 +19,7 @@ WEBSITE_URL = 'https://hyunjongkimmath.github.io/mathbook/'
 def find_links_in_markdown_text(text):
     """Returns ranges in the markdown text string where links occur.
     """
-    matches = re.finditer('\\[.*\\]\\(.*\\)', text)
+    matches = re.finditer('\\[.*?\\]\\(.*?\\)', text)
     return [match.span() for match in matches]
 
 # Cell
@@ -41,7 +41,7 @@ def get_formatted_markdown_link(unformatted_link, destination='website'):
     """
     assert destination in ['website', 'notebook']
     assert re.fullmatch(pattern='\\[.*\\]\\(.*\\)', string=unformatted_link)
-    matches = re.finditer('\\(.*\\)', unformatted_link)
+    matches = re.finditer('\\(.*?\\)', unformatted_link)
     start, end = next(matches).span()
     link_name = unformatted_link[start+1:end-1]
     relative_link = link_with_anchor(link_name, destination=destination)
@@ -55,6 +55,7 @@ def get_formatted_markdown_link(unformatted_link, destination='website'):
 # Cell
 # TODO make it so that if a link is already specified with a format, then the format
 # is preserved.
+# TODO make it so that if a link is a url, then the url is preserved.
 def replace_all_links_with_formatted_links(text, destination='website'):
     """Returns a modification of ``text`` with all links formatted."""
     assert destination in ['website', 'notebook']
