@@ -13,7 +13,7 @@ entries:
       title: Calculus 00_Introduction
       url: calculus.00_introduction.html
     - output: web,pdf
-      title: Title
+      title: Configs
       url: configs.html
     - output: web,pdf
       title: definition.limit

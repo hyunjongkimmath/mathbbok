@@ -4,4 +4,5 @@ __all__ = []
 
 # Cell
 if __name__ == '__main__':
-    embed_markdown_file('definition.set.md', location=LOCATION)
+    embed_markdown_file('definition.set.md',
+                        origin=ORIGIN, destination=DESTINATION)

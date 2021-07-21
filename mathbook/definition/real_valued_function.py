@@ -4,4 +4,5 @@ __all__ = []
 
 # Cell
 if __name__ == '__main__':
-    embed_markdown_file('definition.real_valued_function.md', location=LOCATION)
+    embed_markdown_file('definition.real_valued_function.md',
+                        destination=DESTINATION, origin=ORIGIN)

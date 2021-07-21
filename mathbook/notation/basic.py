@@ -3,4 +3,6 @@
 __all__ = []
 
 # Cell
-if __name__ == '__main__': embed_markdown_file('notation.set_membership.md', location='notebook')
+if __name__ == '__main__':
+    embed_markdown_file('notation.set_membership.md',
+                        destination=DESTINATION, origin=ORIGIN)

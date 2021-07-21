@@ -4,5 +4,5 @@ __all__ = []
 
 # Cell
 if __name__ == '__main__':
-    embed_markdown_file('definition.limit_of_a_function_at_a_finite_input.md',
-                        location=LOCATION)
+    embed_markdown_file('definition.limit_of_a_function_at_a_finite_value.md',
+                        destination=DESTINATION, origin=ORIGIN)

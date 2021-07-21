@@ -46,7 +46,7 @@ nb_path: "nbs/utility.markdown.ipynb"
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Links">Links<a class="anchor-link" href="#Links"> </a></h3><p>I often embed markdown files here via <code>display(Markdown(text))</code> (see <code>embed_markdown_file</code>). This is useful when I want to state the same thing multiple times (e.g. definitions) because I can write the statement in one location and it will automatically be updated whenever I make changes to the statement (e.g. fixing errata).</p>
 <p>One obstruction to this is that links in the markdown files cannot be expected to link to where I want them to - if I were to make links to (local) notebook files during editing, then the links will not link to webpages when I upload the website.</p>
-<p>The <a href="#embed_markdown_file"><code>embed_markdown_file</code></a> method circumvents this obstruction - it allows me to choose whether the links will lead to (local) notebooks or the website. I will format links in the markdown files without specifying the precise locations, e.g. <code>[limit](limit_of_a_function_at_a_point)</code> will show the text <code>limit</code> and link to either a (local) notebook <code>limit_of_a_function_at_a_point.ipynb</code> or a webpage <code>limit_of_a_function_at_a_point.html</code> in the website.</p>
+<p>The <a href="#embed_markdown_file"><code>embed_markdown_file</code></a> method circumvents this obstruction - it allows me to choose whether the links will lead to (local) notebooks or the website. I will format links in the markdown files without specifying the precise destinations, e.g. <code>[limit](limit_of_a_function_at_a_point)</code> will show the text <code>limit</code> and link to either a (local) notebook <code>limit_of_a_function_at_a_point.ipynb</code> or a webpage <code>limit_of_a_function_at_a_point.html</code> in the website.</p>
 <blockquote><p><strong>Note</strong> The notebook files and the corresponding html files that are generated during <code>nbdev_build_docs</code> need to have the same name, e.g. <code>function.ipynb</code> needs to generate <code>function.html</code>.</p>
 </blockquote>
 
@@ -64,7 +64,7 @@ nb_path: "nbs/utility.markdown.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="find_links_in_markdown_text" class="doc_header"><code>find_links_in_markdown_text</code><a href="https://github.com/Hyun Jong Kim/mathbook/tree/master/mathbook/utility/markdown.py#L16" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>find_links_in_markdown_text</code>(<strong><code>text</code></strong>)</p>
+<h4 id="find_links_in_markdown_text" class="doc_header"><code>find_links_in_markdown_text</code><a href="https://github.com/Hyun Jong Kim/mathbook/tree/master/mathbook/utility/markdown.py#L19" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>find_links_in_markdown_text</code>(<strong><code>text</code></strong>)</p>
 </blockquote>
 <p>Returns ranges in the markdown text string where links occur.</p>
 
@@ -131,7 +131,7 @@ nb_path: "nbs/utility.markdown.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="link_with_anchor" class="doc_header"><code>link_with_anchor</code><a href="https://github.com/Hyun Jong Kim/mathbook/tree/master/mathbook/utility/markdown.py#L24" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>link_with_anchor</code>(<strong><code>link_name</code></strong>, <strong><code>location</code></strong>=<em><code>'website'</code></em>)</p>
+<h4 id="link_with_anchor" class="doc_header"><code>link_with_anchor</code><a href="https://github.com/Hyun Jong Kim/mathbook/tree/master/mathbook/utility/markdown.py#L27" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>link_with_anchor</code>(<strong><code>link_name</code></strong>, <strong><code>destination</code></strong>=<em><code>'website'</code></em>)</p>
 </blockquote>
 <p>Formats link so that the file extension comes before
 the pound sign of the anchor.</p>
@@ -161,7 +161,7 @@ the pound sign of the anchor.</p>
 <li>Should not be empty. Should be of the form <code>'link'</code> or <code>'link#anchor'</code>, i.e. should not have surrounding parentheses. Does not have a file extension, e.g. <code>'.html'</code> or <code>'.ipynb'</code>.</li>
 </ul>
 </li>
-<li>location - <code>'website'</code> or <code>'notebook'</code>.</li>
+<li>destination - <code>'website'</code> or <code>'notebook'</code>.</li>
 </ul>
 <p><strong>Returns</strong></p>
 <ul>
@@ -180,13 +180,13 @@ the pound sign of the anchor.</p>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">sample_link_name</span> <span class="o">=</span> <span class="s1">&#39;re#re.split&#39;</span>
-<span class="n">sample_output</span> <span class="o">=</span> <span class="n">link_with_anchor</span><span class="p">(</span><span class="n">sample_link_name</span><span class="p">,</span> <span class="n">location</span> <span class="o">=</span><span class="s1">&#39;website&#39;</span><span class="p">)</span>
+<span class="n">sample_output</span> <span class="o">=</span> <span class="n">link_with_anchor</span><span class="p">(</span><span class="n">sample_link_name</span><span class="p">,</span> <span class="n">destination</span> <span class="o">=</span><span class="s1">&#39;website&#39;</span><span class="p">)</span>
 <span class="k">assert</span> <span class="n">sample_output</span> <span class="o">==</span> <span class="s1">&#39;re.html#re.split&#39;</span>
-<span class="n">sample_output</span> <span class="o">=</span> <span class="n">link_with_anchor</span><span class="p">(</span><span class="n">sample_link_name</span><span class="p">,</span> <span class="n">location</span> <span class="o">=</span><span class="s1">&#39;notebook&#39;</span><span class="p">)</span>
+<span class="n">sample_output</span> <span class="o">=</span> <span class="n">link_with_anchor</span><span class="p">(</span><span class="n">sample_link_name</span><span class="p">,</span> <span class="n">destination</span> <span class="o">=</span><span class="s1">&#39;notebook&#39;</span><span class="p">)</span>
 <span class="k">assert</span> <span class="n">sample_output</span> <span class="o">==</span> <span class="s1">&#39;re.ipynb#re.split&#39;</span>
 
 <span class="n">sample_link_name</span> <span class="o">=</span> <span class="s1">&#39;hi#&#39;</span>
-<span class="n">sample_output</span> <span class="o">=</span> <span class="n">link_with_anchor</span><span class="p">(</span><span class="n">sample_link_name</span><span class="p">,</span> <span class="n">location</span> <span class="o">=</span><span class="s1">&#39;website&#39;</span><span class="p">)</span>
+<span class="n">sample_output</span> <span class="o">=</span> <span class="n">link_with_anchor</span><span class="p">(</span><span class="n">sample_link_name</span><span class="p">,</span> <span class="n">destination</span> <span class="o">=</span><span class="s1">&#39;website&#39;</span><span class="p">)</span>
 <span class="k">assert</span> <span class="n">sample_output</span> <span class="o">==</span> <span class="s1">&#39;hi.html#&#39;</span>
 </pre></div>
 
@@ -208,7 +208,7 @@ the pound sign of the anchor.</p>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="get_formatted_markdown_link" class="doc_header"><code>get_formatted_markdown_link</code><a href="https://github.com/Hyun Jong Kim/mathbook/tree/master/mathbook/utility/markdown.py#L37" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_formatted_markdown_link</code>(<strong><code>unformatted_link</code></strong>, <strong><code>location</code></strong>=<em><code>'website'</code></em>)</p>
+<h4 id="get_formatted_markdown_link" class="doc_header"><code>get_formatted_markdown_link</code><a href="https://github.com/Hyun Jong Kim/mathbook/tree/master/mathbook/utility/markdown.py#L39" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_formatted_markdown_link</code>(<strong><code>unformatted_link</code></strong>, <strong><code>destination</code></strong>=<em><code>'website'</code></em>)</p>
 </blockquote>
 <p>Formats markdown styled link string.</p>
 
@@ -237,12 +237,12 @@ the pound sign of the anchor.</p>
 <li>Of the form <code>[text](link)</code>.</li>
 </ul>
 </li>
-<li><code>location</code> - <code>'website'</code> or <code>'notebook'</code>.</li>
+<li><code>destination</code> - <code>'website'</code> or <code>'notebook'</code>.</li>
 </ul>
 <p><strong>Returns</strong></p>
 <ul>
 <li>str, of the form <code>[text](link.html)</code> or <code>[text](link.ipynb)</code> depending
-on <code>location</code>.</li>
+on <code>destination</code>.</li>
 </ul>
 <p><strong>Examples</strong></p>
 
@@ -257,15 +257,15 @@ on <code>location</code>.</li>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">sample_link</span> <span class="o">=</span> <span class="s1">&#39;[function](function)&#39;</span>
-<span class="n">sample_formatted_link</span> <span class="o">=</span> <span class="n">get_formatted_markdown_link</span><span class="p">(</span><span class="n">sample_link</span><span class="p">,</span> <span class="n">location</span><span class="o">=</span><span class="s1">&#39;website&#39;</span><span class="p">)</span>
+<span class="n">sample_formatted_link</span> <span class="o">=</span> <span class="n">get_formatted_markdown_link</span><span class="p">(</span><span class="n">sample_link</span><span class="p">,</span> <span class="n">destination</span><span class="o">=</span><span class="s1">&#39;website&#39;</span><span class="p">)</span>
 <span class="k">assert</span> <span class="n">sample_formatted_link</span> <span class="o">==</span> <span class="s1">&#39;[function](https://hyunjongkimmath.github.io/mathbook/function.html)&#39;</span>
-<span class="n">sample_formatted_link</span> <span class="o">=</span> <span class="n">get_formatted_markdown_link</span><span class="p">(</span><span class="n">sample_link</span><span class="p">,</span> <span class="n">location</span><span class="o">=</span><span class="s1">&#39;notebook&#39;</span><span class="p">)</span>
+<span class="n">sample_formatted_link</span> <span class="o">=</span> <span class="n">get_formatted_markdown_link</span><span class="p">(</span><span class="n">sample_link</span><span class="p">,</span> <span class="n">destination</span><span class="o">=</span><span class="s1">&#39;notebook&#39;</span><span class="p">)</span>
 <span class="k">assert</span> <span class="n">sample_formatted_link</span> <span class="o">==</span> <span class="s1">&#39;[function](function.ipynb)&#39;</span>
 
 <span class="n">sample_link</span> <span class="o">=</span> <span class="s1">&#39;[limit](limit#limit_of_a_function_at_a_point)&#39;</span>
-<span class="n">sample_formatted_link</span> <span class="o">=</span> <span class="n">get_formatted_markdown_link</span><span class="p">(</span><span class="n">sample_link</span><span class="p">,</span> <span class="n">location</span><span class="o">=</span><span class="s1">&#39;website&#39;</span><span class="p">)</span>
+<span class="n">sample_formatted_link</span> <span class="o">=</span> <span class="n">get_formatted_markdown_link</span><span class="p">(</span><span class="n">sample_link</span><span class="p">,</span> <span class="n">destination</span><span class="o">=</span><span class="s1">&#39;website&#39;</span><span class="p">)</span>
 <span class="k">assert</span> <span class="n">sample_formatted_link</span> <span class="o">==</span> <span class="s1">&#39;[limit](https://hyunjongkimmath.github.io/mathbook/limit.html#limit_of_a_function_at_a_point)&#39;</span>
-<span class="n">sample_formatted_link</span> <span class="o">=</span> <span class="n">get_formatted_markdown_link</span><span class="p">(</span><span class="n">sample_link</span><span class="p">,</span> <span class="n">location</span><span class="o">=</span><span class="s1">&#39;notebook&#39;</span><span class="p">)</span>
+<span class="n">sample_formatted_link</span> <span class="o">=</span> <span class="n">get_formatted_markdown_link</span><span class="p">(</span><span class="n">sample_link</span><span class="p">,</span> <span class="n">destination</span><span class="o">=</span><span class="s1">&#39;notebook&#39;</span><span class="p">)</span>
 <span class="k">assert</span> <span class="n">sample_formatted_link</span> <span class="o">==</span> <span class="s1">&#39;[limit](limit.ipynb#limit_of_a_function_at_a_point)&#39;</span>
 </pre></div>
 
@@ -287,7 +287,7 @@ on <code>location</code>.</li>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="replace_all_links_with_formatted_links" class="doc_header"><code>replace_all_links_with_formatted_links</code><a href="https://github.com/Hyun Jong Kim/mathbook/tree/master/mathbook/utility/markdown.py#L56" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>replace_all_links_with_formatted_links</code>(<strong><code>text</code></strong>, <strong><code>location</code></strong>=<em><code>'website'</code></em>)</p>
+<h4 id="replace_all_links_with_formatted_links" class="doc_header"><code>replace_all_links_with_formatted_links</code><a href="https://github.com/Hyun Jong Kim/mathbook/tree/master/mathbook/utility/markdown.py#L58" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>replace_all_links_with_formatted_links</code>(<strong><code>text</code></strong>, <strong><code>destination</code></strong>=<em><code>'website'</code></em>)</p>
 </blockquote>
 <p>Returns a modification of <code>text</code> with all links formatted.</p>
 
@@ -313,7 +313,7 @@ on <code>location</code>.</li>
 <p><strong>Parameters</strong></p>
 <ul>
 <li><code>text</code> - str</li>
-<li><code>location</code> - <code>'website'</code> or <code>'notebook'</code>.</li>
+<li><code>destination</code> - <code>'website'</code> or <code>'notebook'</code>.</li>
 </ul>
 
 </div>
@@ -324,7 +324,7 @@ on <code>location</code>.</li>
 <h3 id="Footnotes">Footnotes<a class="anchor-link" href="#Footnotes"> </a></h3><p>I usually use footnotes in markdowns to make citations or to indicate notations. An example of the latter kind of footnotes is "$\operatorname{Pic}(X)$ denotes the Picard group of the variety $X$", where the term "Picard group" is linked to a page containing a definition of the term.</p>
 <p>Although this can be time consuming for the writer to put together, the reader does not have to spend a great effort to figure out where the notation is introduced. This is particularly nice especially there is much notation exclusive to the writer's field or niche.</p>
 <p>The writer also can quickly remind themselves of the notation whenever necessary. This is particularly useful when the writer is learning something new for the first time.</p>
-<p>Note that jupyter notebook and the webpages treat footnotes differently. On the one hand, jupyter seems to treat footnotes as links by default. This thus has the same problem as that in <a href="#Links">the section above</a>. In other words, I also have to make sure that footnotes link to the correct location. On the other hand, the webpages treat the</p>
+<p>Note that jupyter notebook and the webpages treat footnotes differently. On the one hand, jupyter seems to treat footnotes as links by default. This thus has the same problem as that in <a href="#Links">the section above</a>. In other words, I also have to make sure that footnotes link to the correct location. On the other hand, the webpages treat the footnotes as text.</p>
 
 </div>
 </div>
@@ -340,7 +340,7 @@ on <code>location</code>.</li>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="find_footnotes_in_markdown_text" class="doc_header"><code>find_footnotes_in_markdown_text</code><a href="https://github.com/Hyun Jong Kim/mathbook/tree/master/mathbook/utility/markdown.py#L66" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>find_footnotes_in_markdown_text</code>(<strong><code>text</code></strong>)</p>
+<h4 id="find_footnotes_in_markdown_text" class="doc_header"><code>find_footnotes_in_markdown_text</code><a href="https://github.com/Hyun Jong Kim/mathbook/tree/master/mathbook/utility/markdown.py#L69" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>find_footnotes_in_markdown_text</code>(<strong><code>text</code></strong>)</p>
 </blockquote>
 <p>Returns ranges in the markdown text string where footnotes occur.</p>
 
@@ -410,7 +410,7 @@ on <code>location</code>.</li>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="replace_all_footnotes_with_formatted_footnotes" class="doc_header"><code>replace_all_footnotes_with_formatted_footnotes</code><a href="https://github.com/Hyun Jong Kim/mathbook/tree/master/mathbook/utility/markdown.py#L73" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>replace_all_footnotes_with_formatted_footnotes</code>(<strong><code>text</code></strong>, <strong><code>location</code></strong>=<em><code>'website'</code></em>)</p>
+<h4 id="replace_all_footnotes_with_formatted_footnotes" class="doc_header"><code>replace_all_footnotes_with_formatted_footnotes</code><a href="https://github.com/Hyun Jong Kim/mathbook/tree/master/mathbook/utility/markdown.py#L76" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>replace_all_footnotes_with_formatted_footnotes</code>(<strong><code>text</code></strong>, <strong><code>destination</code></strong>=<em><code>'website'</code></em>, <strong><code>origin</code></strong>=<em><code>'website'</code></em>)</p>
 </blockquote>
 <p>Returns a modification of <code>text</code> with all footnote links formatted.</p>
 
@@ -433,10 +433,17 @@ on <code>location</code>.</li>
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<p>The <code>replace_all_footnotes_with_formatted_footnotes</code> function depends on both the <code>destination</code> and <code>origin</code> the the <code>origin</code> - the place where the "markdown" document is being read.</p>
+<ul>
+<li>if <code>destination</code> is <code>'website'</code>, then the footnote should be the url of the webpage.</li>
+<li>if <code>origin</code> is <code>'notebook'</code> and <code>destination</code> is <code>'notebook'</code>, then the footnote should be the path to the destination notebook.</li>
+<li>I am not currently implementing the other case, i.e. if <code>origin</code> is <code>'website'</code> and <code>destination</code> is <code>'notebook'</code>.</li>
+</ul>
 <p><strong>Parameters</strong></p>
 <ul>
 <li><code>text</code> - str</li>
-<li><code>location</code> - <code>'website'</code> or <code>'notebook'</code>.</li>
+<li><code>destination</code> - <code>'website'</code> or <code>'notebook'</code>.</li>
+<li><code>origin</code> - <code>'website'</code> or <code>'notebook'</code>. If this is </li>
 </ul>
 <p><strong>Examples</strong></p>
 
@@ -451,7 +458,7 @@ on <code>location</code>.</li>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">sample_text</span> <span class="o">=</span> <span class="s1">&#39;some stuff[^1][^2]</span><span class="se">\n</span><span class="s1">[^1]:link#do</span><span class="se">\n</span><span class="s1">[^2]:other_link&#39;</span>
-<span class="n">replace_all_footnotes_with_formatted_footnotes</span><span class="p">(</span><span class="n">sample_text</span><span class="p">,</span> <span class="n">location</span><span class="o">=</span><span class="s1">&#39;website&#39;</span><span class="p">)</span>
+<span class="n">replace_all_footnotes_with_formatted_footnotes</span><span class="p">(</span><span class="n">sample_text</span><span class="p">,</span> <span class="n">destination</span><span class="o">=</span><span class="s1">&#39;website&#39;</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -466,7 +473,7 @@ on <code>location</code>.</li>
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&#39;some stuff[^1][^2]\n[^1]:link.html#do\n[^2]:other_link.html&#39;</pre>
+<pre>&#39;some stuff[^1][^2]\n[^1]:https://hyunjongkimmath.github.io/mathbook/link.html#do\n[^2]:https://hyunjongkimmath.github.io/mathbook/other_link.html&#39;</pre>
 </div>
 
 </div>
@@ -494,7 +501,7 @@ on <code>location</code>.</li>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="embed_markdown_file" class="doc_header"><code>embed_markdown_file</code><a href="https://github.com/Hyun Jong Kim/mathbook/tree/master/mathbook/utility/markdown.py#L82" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>embed_markdown_file</code>(<strong><code>file_path</code></strong>, <strong><code>display_file_link</code></strong>=<em><code>False</code></em>, <strong><code>location</code></strong>=<em><code>'website'</code></em>)</p>
+<h4 id="embed_markdown_file" class="doc_header"><code>embed_markdown_file</code><a href="https://github.com/Hyun Jong Kim/mathbook/tree/master/mathbook/utility/markdown.py#L96" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>embed_markdown_file</code>(<strong><code>file_path</code></strong>, <strong><code>display_file_link</code></strong>=<em><code>False</code></em>, <strong><code>destination</code></strong>=<em><code>'website'</code></em>, <strong><code>origin</code></strong>=<em><code>'website'</code></em>)</p>
 </blockquote>
 <p>Embed markdown file content into ipynb.</p>
 
@@ -526,6 +533,8 @@ the markdown file at <code>file_path</code>. This should only be
 set to True inside an ipynb environment such as jupyter.</li>
 </ul>
 </li>
+<li><code>destination</code> - <code>'website'</code> or <code>'notebook'</code></li>
+<li><code>origin</code> - <code>'website'</code> or <code>'notebook'</code></li>
 </ul>
 <p><strong>Examples</strong></p>
 
@@ -539,7 +548,7 @@ set to True inside an ipynb environment such as jupyter.</li>
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">embed_markdown_file</span><span class="p">(</span><span class="s1">&#39;definition.limit_of_a_function_at_a_finite_input.md&#39;</span><span class="p">,</span> <span class="n">location</span><span class="o">=</span><span class="s1">&#39;website&#39;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">embed_markdown_file</span><span class="p">(</span><span class="s1">&#39;definition.limit_of_a_function_at_a_finite_input.md&#39;</span><span class="p">,</span> <span class="n">destination</span><span class="o">=</span><span class="s1">&#39;notebook&#39;</span><span class="p">,</span> <span class="n">origin</span><span class="o">=</span><span class="s1">&#39;notebook&#39;</span><span class="p">)</span>
 </pre></div>
 
     </div>
