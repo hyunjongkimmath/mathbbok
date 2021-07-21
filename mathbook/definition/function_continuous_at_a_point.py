@@ -5,7 +5,7 @@ __all__ = []
 # Cell
 if __name__ == '__main__':
     embed_markdown_file('definition.real_valued_function_continuous_at_a_point.md',
-                        destination=DESTINATION, origin=NOTEBOOK)
+                        destination=DESTINATION, origin=ORIGIN)
 
 # Cell
 if __name__ == '__main__':
